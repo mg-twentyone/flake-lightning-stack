@@ -1,0 +1,3 @@
+# Trustedcoin configuration for using external explorers
+disable-plugin=bcli
+plugin=./plugins/trustedcoin/trustedcoin

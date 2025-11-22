@@ -1,0 +1,23 @@
+{
+    http_port 8080
+    https_port 8443
+    admin localhost:2019
+}
+
+:8080 {
+    reverse_proxy localhost:5000
+    
+    log {
+        output file ./.caddy/access.log
+        format json
+    }
+    
+    @websockets {
+        header Connection *Upgrade*
+        header Upgrade websocket
+    }
+    
+    handle @websockets {
+        reverse_proxy localhost:5000
+    }
+}

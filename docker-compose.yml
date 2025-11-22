@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  lightning-node-flake:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+    - HOME=/home/user
+    - USER=user
+    container_name: lightning-node-container
+    hostname: lightning-node-flake
+    volumes:
+      # Mount local directory for easy file sharing
+      - ./flake:/home/user/lightning-node-flake
+      # Persist data
+      - lightning-data:/home/user/.lightning-node
+      - caddy-data:/home/user/.caddy
+    ports:
+      # Caddy HTTP
+      - "8080:8080"
+      # Caddy HTTPS
+      - "8443:8443"
+      # LNbits direct (for testing)
+      - "5000:5000"
+    stdin_open: true
+    tty: true
+
+volumes:
+  lightning-data:
+  caddy-data:
