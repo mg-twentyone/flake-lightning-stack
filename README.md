@@ -2,7 +2,7 @@
 
 Signet Lightning Node stack (Trustedcoin + Core lightning + LNBits) built on top of Nix and NixOS devShell using flakes.
 
-## Prerequisites
+## Prerequisites (for Docker Usage)
 
 - Docker and Docker Compose installed
 
