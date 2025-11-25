@@ -1,5 +1,5 @@
 {
-  description = "Bitcoin Lightning Node on Signet (using TrustedCoin)";
+  description = "Bitcoin Lightning Node stack on Signet (Trustedcoin + Core lightning + LNBits)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
